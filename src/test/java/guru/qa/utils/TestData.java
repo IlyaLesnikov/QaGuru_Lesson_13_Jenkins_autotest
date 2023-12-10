@@ -46,12 +46,21 @@ public class TestData {
         return day;
     }
     public String getRandomCity() {
-        return switch(state) {
-            case "NCR" -> faker.options().option("Delphi", "Gurgaon", "Noida");
-            case "Uttar Pradesh" -> faker.options().option("Agra", "Lucknow", "Merrut");
-            case "Haryana" -> faker.options().option("Karnal", "Panipat");
-            case "Rajasthan" -> faker.options().option("Jaipur", "Jaiselmer");
-            default -> null;
-        };
+        String stateOne = null;
+        switch(state) {
+            case "NCR":
+                stateOne = faker.options().option("Delphi", "Gurgaon", "Noida");
+                break;
+            case "Uttar Pradesh":
+                stateOne = faker.options().option("Agra", "Lucknow", "Merrut");
+                break;
+            case "Haryana":
+                stateOne = faker.options().option("Karnal", "Panipat");
+                break;
+            case "Rajasthan":
+                stateOne = faker.options().option("Jaipur", "Jaiselmer");
+                break;
+        }
+        return stateOne;
     }
 }
