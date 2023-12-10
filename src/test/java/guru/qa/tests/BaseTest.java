@@ -9,5 +9,6 @@ abstract public class BaseTest {
         Configuration.browserSize = "1600х900";
         Configuration.baseUrl = "https://www.kinopoisk.ru/";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 }
