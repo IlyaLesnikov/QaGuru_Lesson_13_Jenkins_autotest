@@ -58,3 +58,9 @@ task demoqa_smoke_test(type: Test) {
         includeTags("SMOKE")
     }
 }
+
+task demoqa_web_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("WEB")
+    }
+}
