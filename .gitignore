@@ -1,0 +1,23 @@
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+HELP.md
+build/
+!**/src/main/**
+!**/src/test/**
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Gradle ###
+.gradle
+gradlew
+gradlew.bat
+settings.gradle
+
+### Logs ###
+*.log
