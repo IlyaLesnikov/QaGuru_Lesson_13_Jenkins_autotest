@@ -1,8 +1,11 @@
 package guru.qa.tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import guru.qa.pages.components.CheckResultComponent;
 import guru.qa.utils.TestData;
 import io.qameta.allure.Description;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,6 +17,10 @@ public class PracticeFormTest extends BaseTest {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
     CheckResultComponent checkResultComponent = new CheckResultComponent();
     TestData data = new TestData();
+    @BeforeEach
+    public void allureSteps() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
     @Test
     @Tag("SMOKE")
     @DisplayName("Отправка веб-форма со всеми полями заполеннными валидными значениями")
