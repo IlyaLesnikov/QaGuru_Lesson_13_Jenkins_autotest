@@ -5,10 +5,7 @@ import guru.qa.pages.components.CheckResultComponent;
 import guru.qa.utils.TestData;
 import io.qameta.allure.Description;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import guru.qa.pages.PracticeFormPage;
 
 import static io.qameta.allure.Allure.step;
@@ -20,6 +17,13 @@ public class PracticeFormTest extends BaseTest {
     @BeforeEach
     public void allureSteps() {
         SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+    @AfterEach
+    public void addAttachments() {
+        helpers.Attach.screenshotAs("Last screenshot");
+        helpers.Attach.pageSource();
+        helpers.Attach.browserConsoleLogs();
+        helpers.Attach.addVideo();
     }
     @Test
     @Tag("SMOKE")
